@@ -1,3 +1,26 @@
 #!/bin/bash
 
-# this file backsup files/folders in your system.
+# this file backs up files/folders in your system.
+src=$1
+dest=$2
+
+# 7z command arguments
+# ====================
+# a                     add files to archive
+# backup_$today.7z      desitnation/output zip file/folder location
+# -m0                   parameter: 0, compression method set as lzma2
+# -mx                   parameter: x, set as 9
+# -r0                   recurse sub-directories
+# -si                   read data from stdin
+# *                     <input> source files/folder to compress location
+
+# tar command arguments
+# =====================
+# c                     create
+# f                     creates an archive file
+# p                     preserve file permissions and ownership
+# v                     be verobse - print all actions
+# z                     enables gzip compression
+
+# compresses a tar file into a 7z
+tar cfpvz - $src | 7z a -m0=lzma2 -mx=9 -si $dest.tar.7z
