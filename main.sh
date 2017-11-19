@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # this file backs up files/folders in your system.
-src=$1
-dest=$2
+input=$1
+output=$2
+
+today=$(date +%Y-%m-%d:%H:%M)
+echo "Backing up data in $output_($today).tar.7z"
 
 # 7z command arguments
 # ====================
@@ -23,4 +26,4 @@ dest=$2
 # z                     enables gzip compression
 
 # compresses a tar file into a 7z
-tar cfpvz - $src | 7z a -m0=lzma2 -mx=9 -si $dest.tar.7z
+tar cfpvz - $input | 7z a -m0=lzma2 -mx=9 -si $output_$today.tar.7z
