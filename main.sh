@@ -11,10 +11,10 @@ echo "Backing up data in $output_($today).tar.7z"
 # ====================
 # a                     add files to archive
 # backup_$today.7z      desitnation/output zip file/folder location
-# -m0                   parameter: 0, compression method set as lzma2
-# -mx                   parameter: x, set as 9
+# -m0                   parameter: 0, compression method set as `lzma2`
+# -mx                   parameter: x, set as `9`
 # -r0                   recurse sub-directories
-# -si                   read data from stdin
+  # -si                   read data from stdin
 # *                     <input> source files/folder to compress location
 
 # tar command arguments
@@ -29,4 +29,4 @@ echo "Backing up data in $output_($today).tar.7z"
 # tar --exclude-from=.gitignore -cfpvz $input | 7z a -m0=lzma2 -mx=9 -si $output_$today.tar.7z
 
 # use only tar
-tar --exclude-from=.gitignore -cpvzf $output.tar $input
+tar --exclude-from=.gitignore -cvjf $output.tar.bz2 $input > $today.log
