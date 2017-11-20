@@ -1,7 +1,5 @@
-# Ignore all files that generally ought not to be committed into the repo.
-# Never commit sensitive data.
-# Never commit useless files.
-# Try not to commit large files.
+# Ignore all files that generally ought not to be taken backup of.
+# This file is also useful for ignoring files to be committed into github.
 
 # Filenames should NOT have spaces
 * *
@@ -10,9 +8,7 @@
 *.py[cod]
 
 # Ignore log files
-logs/
-_ignore_folder
-_another_ignore_folder
+logs/*
 
 # Ignore main data file -- it's too large
 
@@ -21,8 +17,8 @@ _another_ignore_folder
 *.sqlite3-journal
 
 # Cache folders created by Gramex
-.cache/
-.gramex-compiled/
+.cache/*
+.gramex-compiled/*
 
 # Old vis.py used to produce xhtml output. Ignore these
 *.xhtml
@@ -31,16 +27,6 @@ _another_ignore_folder
 *.csv
 *.dat
 *.mdb
-
-# Zip files that aren't read by Pandas
-*.7z
-*.zip
-
-# Documents
-*.doc*
-*.pdf
-*.ppt*
-*.xls*
 
 # Avoid media files
 *.avi
@@ -62,17 +48,19 @@ _another_ignore_folder
 *.stackdump
 
 # Ignore bower components and npm modules
-node_modules/
-bower_components/
+node_modules/*
+bower_components/*
 
 # Windows shortcut files
 *.lnk
 
-# Windows / Mac OS junk files
+# Windows / Mac OS junk files and folders
 Desktop.ini
-$RECYCLE.BIN/
+System Volume Information/*
+$RECYCLE.BIN/*
 *[Tt]humbs.db
 *.DS_Store
+.git/*
 
 # R history files
 .RHistory
