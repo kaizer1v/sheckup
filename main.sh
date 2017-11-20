@@ -26,4 +26,7 @@ echo "Backing up data in $output_($today).tar.7z"
 # z                     enables gzip compression
 
 # compresses a tar file into a 7z
-tar cfpvz - $input | 7z a -m0=lzma2 -mx=9 -si $output_$today.tar.7z
+# tar --exclude-from=.gitignore -cfpvz $input | 7z a -m0=lzma2 -mx=9 -si $output_$today.tar.7z
+
+# use only tar
+tar --exclude-from=.gitignore -cpvzf $output.tar $input
