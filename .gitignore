@@ -11,6 +11,8 @@
 
 # Ignore log files
 logs/
+_ignore_folder
+_another_ignore_folder
 
 # Ignore main data file -- it's too large
 
