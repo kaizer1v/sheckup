@@ -20,3 +20,21 @@ $ ./main.sh src_folder_path dest_path/dest_filename
 
 > **NOTE**: The software automatically saves it as a bz2 zipped format, for efficiency purposes and thus, you don't need to
 provide a file extension.
+
+Example
+
+```sh
+$ ./main.sh /var/www /opt/backups/websites
+```
+
+In case if an output file name is not provided, it will automatically save it with the current timestamp.
+
+## Logging
+
+The software automatically saves a `.log` file along with the `bz2` zipped file. This will
+contain the paths of the files copied/zipped.
+
+## Skip Files and Folders
+
+The software also allows you to omit/skip files and folders which you might not want to zip. This
+can be mentioned in the `.gitignore` file.

@@ -30,3 +30,6 @@ echo "Backing up data in $output_($today).tar.7z"
 
 # use only tar and log output
 tar --exclude-from=.gitignore -cvjf $output.tar.bz2 $input > $today.log
+
+# extract using
+# tar -xvjf __filename__.bz2
