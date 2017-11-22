@@ -1,35 +1,21 @@
-#!/bin/bash
+#!/bin/sh
 
-# this file backs up files/folders in your system.
-input=$1
-output=$2
+# Parent backup directory
+dest_fldr="/media/vivek/Everything/.bckp_fldr"
 
-today=$(date +%Y-%m-%d:%H:%M)
-echo "Backing up data in $output_($today).tar.7z"
+# Directories to backup (separated by space)
+src_flders="/media/vivek/Everything/personal_projects/daytrippr /media/vivek/Everything/personal_projects/pandas"
 
-# 7z command arguments
-# ====================
-# a                     add files to archive
-# backup_$today.7z      desitnation/output zip file/folder location
-# -m0                   parameter: 0, compression method set as `lzma2`
-# -mx                   parameter: x, set as `9`
-# -r0                   recurse sub-directories
-  # -si                   read data from stdin
-# *                     <input> source files/folder to compress location
+# Check and create backup directory
+backup_date=`date +%Y_%m_%d_%H_%M`
+backup_dir=${dest_fldr}/bckp_${backup_date}
+mkdir -p $backup_dir
 
-# tar command arguments
-# =====================
-# c                     create
-# f                     creates an archive file
-# p                     preserve file permissions and ownership
-# v                     be verobse - print all actions
-# z                     enables gzip compression
-
-# compresses a tar file into a 7z
-# tar --exclude-from=.gitignore -cfpvz $input | 7z a -m0=lzma2 -mx=9 -si $output_$today.tar.7z
-
-# use only tar and log output
-tar --exclude-from=.gitignore -cvjf $output.tar.bz2 $input > $today.log
-
-# extract using
-# tar -xvjf __filename__.bz2
+# Perform backup
+for fldr in $src_flders
+do
+  # replace all backslashes and frontslashes with an `_` as a folder name
+  archive_name=`echo ${fldr} | sed s/^\\\/// | sed s/\\\//_/g`
+  echo ${archive_name}
+  tar --exclude-from=.gitignore -cpzjf ${backup_dir}/${archive_name}.tgz ${fldr}
+done
