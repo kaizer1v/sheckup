@@ -16,6 +16,6 @@ for fldr in $src_flders
 do
   # replace all backslashes and frontslashes with an `_` as a folder name
   archive_name=`echo ${fldr} | sed s/^\\\/// | sed s/\\\//_/g`
-  echo ${archive_name}
-  tar --exclude-from=.gitignore -cpzjf ${backup_dir}/${archive_name}.tgz ${fldr}
+  echo 'zipping ' ${archive_name} ' ...\n'
+  tar --exclude-from=.gitignore -cpvzf ${backup_dir}/${archive_name}.tgz ${fldr} 2>&1 | tee > ${backup_dir}/${archive_name}.log
 done
