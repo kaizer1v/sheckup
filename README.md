@@ -5,6 +5,7 @@ A shell based file backing-up software.
 - 7z command explained [Ref Link - 1](https://www.howtoforge.com/tutorial/how-to-install-and-use-7zip-file-archiver-on-ubuntu-linux/)
 - tar command explained [Ref Link - 2](https://www.howtoforge.com/tutorial/linux-tar-command/)
 - tar command [Ref Link - 3](http://www.gnu.org/software/tar/manual/html_node/file.html#SEC107)
+- backup [Ref Link - 4](https://blog.sleeplessbeastie.eu/2013/03/12/simple-shell-script-to-backup-selected-directories/)
 
 
 ## Usage
