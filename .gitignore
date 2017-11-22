@@ -61,6 +61,7 @@ $RECYCLE.BIN
 *[Tt]humbs.db
 *.DS_Store
 .git
+software_setups
 
 # R history files
 .RHistory
