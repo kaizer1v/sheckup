@@ -4,10 +4,10 @@
 dest_fldr="/media/vivek/Everything/.bckp_fldr"
 
 # Directories to backup (separated by space)
-src_flders="/media/vivek/Everything/"
+src_flders="/media/vivek/Everything/personal_projects /media/vivek/Everything/gramener /media/vivek/Everything/pictures"
 
 # Check and create backup directory
-backup_date=`date +%Y_%m_%d_%H_%M`
+backup_date=`date +%Y_%m_%d_(%H_%M)`
 backup_dir=${dest_fldr}/bckp_${backup_date}
 mkdir -p $backup_dir
 
