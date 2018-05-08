@@ -56,6 +56,9 @@ bower_components
 *.lnk
 *.Trash*
 
+# Backup files
+.bckp_fldr
+
 # Windows / Mac OS junk files and folders
 Desktop.ini
 System Volume Information
